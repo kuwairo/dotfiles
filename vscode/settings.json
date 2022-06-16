@@ -1,0 +1,31 @@
+{
+    "telemetry.telemetryLevel": "off",
+
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Tokyo Night",
+
+    "editor.fontFamily": "'Iosevka', monospace",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.rulers": [80, 120],
+    "editor.lineNumbers": "relative",
+
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
+
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+}
