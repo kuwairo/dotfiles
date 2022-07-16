@@ -2,12 +2,13 @@
     "telemetry.telemetryLevel": "off",
 
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "Tokyo Night Storm",
 
-    "editor.fontFamily": "'Iosevka', monospace",
+    "editor.fontFamily": "'JetBrains Mono', monospace",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.rulers": [80, 120],
     "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
 
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "custom",
