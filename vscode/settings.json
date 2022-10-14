@@ -2,7 +2,7 @@
     "telemetry.telemetryLevel": "off",
 
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Tokyo Night Storm",
+    "workbench.colorTheme": "GitHub Dark",
 
     "editor.fontFamily": "'JetBrains Mono', monospace",
     "editor.copyWithSyntaxHighlighting": false,
@@ -16,7 +16,6 @@
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": false,
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
@@ -25,6 +24,7 @@
         }
     ],
     "vim.leader": "<space>",
+    "vim.useCtrlKeys": false,
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
