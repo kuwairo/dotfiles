@@ -1,0 +1,14 @@
+theme = "kanagawa"
+
+[editor]
+mouse = false
+scrolloff = 10
+line-number = "relative"
+bufferline = "never"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
