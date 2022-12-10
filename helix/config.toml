@@ -1,10 +1,9 @@
-theme = "kanagawa"
+theme = "everforest_dark"
 
 [editor]
 mouse = false
-scrolloff = 10
+scrolloff = 6
 line-number = "relative"
-bufferline = "never"
 
 [editor.cursor-shape]
 insert = "bar"
