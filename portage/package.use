@@ -12,3 +12,12 @@ media-libs/libsndfile minimal
 
 # For non-PNG wallpapers
 gui-apps/swaybg gdk-pixbuf
+
+# Disable Qt for Transmission
+net-p2p/transmission -qt5 -qt6
+
+# Do not install cron files, snapshot all datasets by default
+sys-fs/zfs-auto-snapshot -cron -default-exclude
+
+# Better performance (in Flatpak)
+sys-apps/bubblewrap -suid
