@@ -1,5 +1,8 @@
 */* CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 
+# PulseAudio circular dependencies fix
+media-libs/libsndfile minimal
+
 # PipeWire
 media-video/pipewire sound-server
 media-sound/pulseaudio -daemon
@@ -7,17 +10,18 @@ media-sound/pulseaudio -daemon
 # Necessary for Wayland support
 media-libs/libsdl2 gles2
 
-# PulseAudio circular dependencies fix
-media-libs/libsndfile minimal
-
-# For non-PNG wallpapers
-gui-apps/swaybg gdk-pixbuf
-
-# Disable Qt for Transmission
-net-p2p/transmission -qt5 -qt6
-
 # Do not install cron files, snapshot all datasets by default
 sys-fs/zfs-auto-snapshot -cron -default-exclude
 
 # Better performance (in Flatpak)
 sys-apps/bubblewrap -suid
+
+# Virtualization
+net-misc/spice-gtk usbredir
+net-dns/dnsmasq script
+app-emulation/libvirt pcap virt-network numa fuse macvtap vepa qemu zfs bash-completion
+app-emulation/qemu gtk sdl spice usbredir
+app-emulation/qemu QEMU_SOFTMMU_TARGETS: x86_64 aarch64 riscv64 arm QEMU_USER_TARGETS: x86_64
+
+# Disable GTK for Transmission
+net-p2p/transmission -gtk
