@@ -3,7 +3,7 @@
 
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "GitHub Dark",
 
     "editor.fontSize": 13,
     "editor.fontFamily": "JetBrains Mono",
@@ -18,6 +18,6 @@
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.leader": "<space>",
-    "vim.useCtrlKeys": false,
+    "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
 }
