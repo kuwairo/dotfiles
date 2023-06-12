@@ -5,7 +5,7 @@
     "workbench.sideBar.location": "right",
     "workbench.colorTheme": "GitHub Dark",
 
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.fontFamily": "JetBrains Mono",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
@@ -19,5 +19,5 @@
     "vim.hlsearch": true,
     "vim.leader": "<space>",
     "vim.useCtrlKeys": true,
-    "vim.useSystemClipboard": true,
+    "vim.useSystemClipboard": true
 }
