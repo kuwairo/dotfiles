@@ -113,7 +113,7 @@
 
   users.users.regn = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -126,8 +126,10 @@
     gnome.gnome-tweaks
     libva-utils
     papirus-icon-theme
+    transmission-gtk
     tree
     vim
+    virt-manager
     vscode.fhs
     wget
     wl-clipboard
@@ -147,8 +149,7 @@
     storageDriver = "zfs";
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "regn" ];
+  virtualisation.libvirtd.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
