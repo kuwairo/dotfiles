@@ -101,6 +101,9 @@
     yelp
   ];
 
+  # Useful for virt-manager
+  programs.dconf.enable = true;
+
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
