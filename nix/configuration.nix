@@ -25,23 +25,8 @@
   };
 
   boot.zfs.devNodes = "/dev/disk/by-id";
-  boot.supportedFilesystems = [ "zfs" ];
   boot.loader.efi.canTouchEfiVariables = true;
-
-  fileSystems."/" = {
-    device = "zroot/os";
-    fsType = "zfs";
-  };
-
-  fileSystems."/nix" = {
-    device = "zroot/nix";
-    fsType = "zfs";
-  };
-
-  fileSystems."/home" = {
-    device = "zroot/home";
-    fsType = "zfs";
-  };
+  boot.supportedFilesystems = [ "zfs" "ntfs" ];
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/2710-238A";
@@ -67,20 +52,23 @@
     memoryPercent = 50;
   };
 
-  console.keyMap = "us";
+  console.useXkbConfig = true;
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Krasnoyarsk";
 
   services.xserver = {
     enable = true;
     layout = "us";
+    xkbOptions = "ctrl:swapcaps";
+    excludePackages = [ pkgs.xterm ];
+
     displayManager = {
       gdm.enable = true;
       autoLogin.enable = true;
       autoLogin.user = "regn";
     };
+
     desktopManager.gnome.enable = true;
-    excludePackages = [ pkgs.xterm ];
   };
 
   # GDM automatic login fix
@@ -139,6 +127,8 @@
   ];
 
   fonts.fonts = with pkgs; [
+    cascadia-code
+    fira-mono
     jetbrains-mono
     noto-fonts
     noto-fonts-cjk
