@@ -7,8 +7,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
@@ -89,7 +87,7 @@
     yelp
   ];
 
-  # Useful for virt-manager
+  # For virt-manager, mainly
   programs.dconf.enable = true;
 
   hardware.pulseaudio.enable = false;
