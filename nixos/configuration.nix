@@ -54,6 +54,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Krasnoyarsk";
 
+  # Temporary fix for Firefox time zone issue
+  environment.variables = {
+    TZ = "${config.time.timeZone}";
+  };
+
   services.xserver = {
     enable = true;
     layout = "us";
@@ -115,6 +120,7 @@
     gnome.gnome-tweaks
     libva-utils
     papirus-icon-theme
+    spotify
     transmission-gtk
     tree
     vim
@@ -146,6 +152,9 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # For GNOME + NetworkManager
+  networking.firewall.checkReversePath = false;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
