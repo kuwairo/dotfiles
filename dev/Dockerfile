@@ -7,6 +7,7 @@ RUN apt-get update && \
     bash-completion \
     build-essential \
     curl \
+    file \
     git \
     iproute2 \
     iputils-ping \
@@ -53,6 +54,6 @@ RUN git clone https://github.com/helix-editor/helix .helix && \
     hx --grammar build
 
 WORKDIR /home/dev
-COPY helix .config/helix
+COPY --chown=dev:dev helix .config/helix
 
 CMD ["/bin/bash", "--login"]
