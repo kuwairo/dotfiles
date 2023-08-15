@@ -2,7 +2,8 @@ FROM docker.io/debian:12
 
 ENV TERM=xterm-256color
 
-RUN apt-get update && apt-get install --assume-yes \
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes \
     bash-completion \
     build-essential \
     curl \
@@ -11,11 +12,19 @@ RUN apt-get update && apt-get install --assume-yes \
     iputils-ping \
     jq \
     less \
+    locales \
     man \
     openssh-client \
     sudo \
     tree \
     wget
+
+RUN sed --in-place 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 RUN useradd --create-home --shell /bin/bash dev && \
     echo 'dev ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/dev
@@ -34,12 +43,12 @@ RUN curl --silent --show-error --fail https://sh.rustup.rs \
     rustup default stable && \
     rustup component add rust-analyzer
 
-RUN mkdir -p Git/helix && \
-    git clone https://github.com/helix-editor/helix Git/helix && \
-    cd Git/helix && \
+RUN git clone https://github.com/helix-editor/helix .helix && \
+    cd .helix && \
+    git checkout 23.05 && \
     . "$HOME/.cargo/env" && \
     cargo install --path helix-term --locked && \
-    echo 'export HELIX_RUNTIME="$HOME/Git/helix/runtime"' >> "$HOME/.bashrc" && \
+    echo 'export HELIX_RUNTIME="$HOME/.helix/runtime"' >> "$HOME/.bashrc" && \
     hx --grammar fetch && \
     hx --grammar build
 
