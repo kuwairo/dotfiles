@@ -107,7 +107,7 @@
 
   users.users.regn = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
   };
 
   environment.systemPackages = with pkgs; [
