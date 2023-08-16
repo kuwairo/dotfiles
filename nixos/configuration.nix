@@ -118,6 +118,7 @@
     firefox
     git
     gnome.gnome-tweaks
+    jq
     libva-utils
     papirus-icon-theme
     spotify
@@ -125,7 +126,6 @@
     tree
     vim
     virt-manager
-    vscode.fhs
     wget
     wl-clipboard
   ];
