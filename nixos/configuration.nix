@@ -59,6 +59,11 @@
     TZ = "${config.time.timeZone}";
   };
 
+  environment.interactiveShellInit = ''
+    alias dock="docker start dev && docker exec -it dev /bin/bash --login"
+    alias undock="docker stop dev"
+  '';
+
   services.xserver = {
     enable = true;
     layout = "us";
