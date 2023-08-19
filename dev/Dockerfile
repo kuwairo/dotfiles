@@ -15,7 +15,6 @@ RUN pacman --sync --refresh --sysupgrade --noconfirm \
     jq \
     man-db \
     man-pages \
-    opam \
     openssh \
     rsync \
     rustup \
@@ -33,9 +32,6 @@ COPY --chown=dev:dev helix .config/helix
 RUN go install golang.org/x/tools/gopls@latest && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     echo 'export PATH="$PATH:$HOME/go/bin"' >> .bashrc
-
-RUN opam init --auto-setup --disable-sandboxing && \
-    opam install --yes dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
 
 RUN rustup default stable && \
     rustup component add rust-analyzer
