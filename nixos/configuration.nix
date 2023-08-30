@@ -116,6 +116,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    adw-gtk3
     blackbox-terminal
     btop
     celluloid
