@@ -39,9 +39,12 @@ RUN curl --proto '=https' --tlsv1.2 --silent --show-error --fail \
     BOOTSTRAP_HASKELL_NONINTERACTIVE="Y" \
     BOOTSTRAP_HASKELL_GHC_VERSION="latest" \
     BOOTSTRAP_HASKELL_CABAL_VERSION="latest" \
+    BOOTSTRAP_HASKELL_INSTALL_NO_STACK="Y" \
     BOOTSTRAP_HASKELL_INSTALL_HLS="Y" \
     BOOTSTRAP_HASKELL_ADJUST_BASHRC="P" \
-    /bin/sh
+    /bin/sh && \
+    . .ghcup/env && \
+    cabal install --installdir="$HOME/.cabal/bin" ormolu
 
 COPY --chown=dev:dev helix .config/helix
 
