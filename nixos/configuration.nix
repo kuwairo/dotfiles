@@ -59,11 +59,6 @@
     TZ = "${config.time.timeZone}";
   };
 
-  environment.interactiveShellInit = ''
-    alias dock="docker start dev && docker exec -it dev /bin/bash --login"
-    alias undock="docker stop dev"
-  '';
-
   services.xserver = {
     enable = true;
     layout = "us";
@@ -110,7 +105,11 @@
     jack.enable = true;
   };
 
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ fish ];
+
   users.users.regn = {
+    shell = pkgs.fish;
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
   };
