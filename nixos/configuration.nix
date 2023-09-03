@@ -54,9 +54,10 @@
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Krasnoyarsk";
 
-  # Temporary fix for Firefox time zone issue
   environment.variables = {
+    # Temporary fix for Firefox time zone issue
     TZ = "${config.time.timeZone}";
+    EDITOR = "hx";
   };
 
   services.xserver = {
