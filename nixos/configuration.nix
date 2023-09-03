@@ -123,13 +123,13 @@
     firefox
     git
     gnome.gnome-tweaks
+    helix
     jq
     libva-utils
     papirus-icon-theme
     spotify
     transmission-gtk
     tree
-    vim
     virt-manager
     wget
     wl-clipboard
