@@ -1,4 +1,4 @@
-theme = "catppuccin_frappe"
+theme = "solarized_light"
 
 [editor]
 mouse = false
