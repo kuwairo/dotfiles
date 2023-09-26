@@ -18,6 +18,7 @@ RUN pacman --sync --refresh --sysupgrade --noconfirm \
     openssh \
     rsync \
     rustup \
+    tokei \
     tree \
     wget
 
@@ -35,5 +36,6 @@ RUN rustup default stable && \
     rustup component add rust-analyzer
 
 COPY --chown=dev:dev helix .config/helix
+RUN echo 'alias hx="helix"' >> .bashrc
 
 CMD ["/bin/bash", "--login"]
