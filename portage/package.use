@@ -3,15 +3,12 @@
 # To avoid net-libs/webkit-gtk
 gnome-base/nautilus -previewer
 
+# For Flatpak
+sys-apps/bubblewrap -suid
+
 # Use PipeWire
 media-video/pipewire sound-server
 media-sound/pulseaudio -daemon
 
-# For Flatpak
-sys-apps/bubblewrap -suid
-
 # ZFS automatic snapshots
-sys-fs/zfs-auto-snapshot -cron -default-exclude
-
-# Include FAT16/FAT32 support
-sys-apps/gnome-disk-utility fat
+sys-fs/zfs-auto-snapshot default-exclude -cron
