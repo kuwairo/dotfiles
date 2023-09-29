@@ -1,0 +1,8 @@
+{
+	auto_https off
+}
+
+http://localhost {
+	root * /var/cache/binpkgs
+	file_server browse
+}
