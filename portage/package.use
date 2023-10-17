@@ -15,3 +15,6 @@ sys-fs/zfs-auto-snapshot default-exclude -cron
 
 # Remove Ruby dependency (caused by ronn-ng)
 sys-apps/zram-generator -man
+
+# Virtualization
+app-emulation/qemu spice usbredir virgl zstd
