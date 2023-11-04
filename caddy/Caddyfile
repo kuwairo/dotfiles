@@ -1,8 +1,0 @@
-{
-	auto_https off
-}
-
-http://10.0.0.56 {
-	root * /var/cache/binpkgs
-	file_server browse
-}

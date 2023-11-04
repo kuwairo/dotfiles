@@ -1,7 +1,0 @@
-[[language]]
-name = "go"
-formatter = { command = "goimports" }
-
-[[language]]
-name = "haskell"
-auto-format = true
