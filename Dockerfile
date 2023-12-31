@@ -7,6 +7,7 @@ RUN echo 'en_US.UTF-8 UTF-8' > /etc/default/libc-locales && \
 
 RUN xbps-install --sync --update --yes && \
     xbps-install --yes \
+    base-devel \
     file \
     fish-shell \
     git \
