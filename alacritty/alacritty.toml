@@ -1,0 +1,42 @@
+[env]
+TERM = "alacritty"
+
+[window]
+padding = { x = 8, y = 8 }
+
+[scrolling]
+history = 65536
+
+[font]
+normal = { family = "Cascadia Mono", style = "Regular" }
+bold = { family = "Cascadia Mono", style = "Bold" }
+italic = { family = "Cascadia Mono", style = "Regular" }
+bold_italic = { family = "Cascadia Mono", style = "Bold" }
+size = 10
+
+[colors.primary]
+background = "#fbf1c7"
+foreground = "#3c3836"
+
+[colors.normal]
+black = "#fbf1c7"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#7c6f64"
+
+[colors.bright]
+black = "#928374"
+red = "#9d0006"
+green = "#79740e"
+yellow = "#b57614"
+blue = "#076678"
+magenta = "#8f3f71"
+cyan = "#427b58"
+white = "#3c3836"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
