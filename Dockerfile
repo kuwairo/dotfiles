@@ -1,12 +1,13 @@
 FROM ghcr.io/void-linux/void-glibc-full
 
-ENV TERM=xterm-kitty
+ENV TERM=alacritty
 
 RUN echo 'en_US.UTF-8 UTF-8' > /etc/default/libc-locales && \
     xbps-reconfigure --force glibc-locales
 
-RUN xbps-install --sync --update --yes && \
-    xbps-install --yes \
+RUN xbps-install --sync --update --yes xbps && \
+    xbps-install --sync --update --yes \
+    alacritty-terminfo \
     base-devel \
     file \
     fish-shell \
@@ -14,7 +15,6 @@ RUN xbps-install --sync --update --yes && \
     go \
     helix \
     jq \
-    kitty-terminfo \
     man-db \
     man-pages \
     ncurses \
