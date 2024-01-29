@@ -45,8 +45,8 @@ client.background       $base07
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'adw-gtk3'
-    gsettings set $gnome-schema icon-theme 'Papirus'
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
 }
 
