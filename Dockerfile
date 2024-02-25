@@ -9,8 +9,8 @@ RUN xbps-install --sync --update --yes xbps && \
     xbps-install --sync --update --yes \
     alacritty-terminfo \
     base-devel \
+    bash-completion \
     file \
-    fish-shell \
     git \
     go \
     helix \
@@ -18,28 +18,22 @@ RUN xbps-install --sync --update --yes xbps && \
     man-db \
     man-pages \
     ncurses \
-    rustup \
     sudo \
     tokei \
     tree \
     wget \
     xtools
 
-RUN useradd --create-home --shell /usr/bin/fish dev && \
+RUN useradd --create-home --shell /bin/bash dev && \
     echo 'dev ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/dev
 
 USER dev
 WORKDIR /home/dev
 
-RUN rm .bash* .inputrc
-COPY --chown=dev:dev fish .config/fish
 COPY --chown=dev:dev helix .config/helix
 
 RUN go install golang.org/x/tools/gopls@latest && \
     go install golang.org/x/tools/cmd/goimports@latest && \
-    fish --command='fish_add_path go/bin'
+    echo 'PATH=$HOME/go/bin:$PATH' >> .bash_profile
 
-RUN rustup-init -y --no-modify-path --component rust-analyzer && \
-    fish --command='fish_add_path .cargo/bin'
-
-CMD ["/usr/bin/fish", "--login"]
+CMD ["/bin/bash", "--login"]
