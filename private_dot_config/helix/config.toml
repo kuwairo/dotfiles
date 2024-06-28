@@ -1,0 +1,14 @@
+theme = "everforest_light"
+
+[editor]
+line-number = "relative"
+mouse = false
+scrolloff = 6
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
